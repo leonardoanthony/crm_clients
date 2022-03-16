@@ -2,6 +2,12 @@
 
      class Painel {
 
+        public static $perfil = [
+            '0' => 'VISUALIZADOR',
+            '1' => 'OPERADOR'
+        ];
+
+
         // Define se o usuário está logado ou não
         public static function logado(){
             return isset($_SESSION['login']) ? true : false;
@@ -26,10 +32,18 @@
                 if (file_exists('pages/' . $url[0] . '.php')) {
                     include('pages/' . $url[0] . '.php');
                 } else {
-                    header('Location: ' . INCLUDE_PATH_PAINEL);
+                    header('Location: ' . INCLUDE_PATH);
                 }
             } else {
                 include('pages/home.php');
+            }
+        }
+
+        public static function alert($type, $mensagem){
+            if($type == 'sucesso'){
+                echo '<div class="alert sucesso">'.$mensagem.'</div>';
+            }else if($type == 'erro'){
+                echo '<div class="alert erro">'.$mensagem.'</div>';
             }
         }
     }
