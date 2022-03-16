@@ -51,6 +51,18 @@
             $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = $id");
             $sql->execute();
         }
+
+        public static function permisssaoMenu($perfil){
+            if($perfil == 1){
+                echo 'style="display: none;"';
+            }
+        }
+
+        public static function permissaoPagina($perfil){
+            if($perfil == 1){
+                return false;
+            }
+        }
     }
 
 ?>
