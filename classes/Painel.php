@@ -1,6 +1,6 @@
 <?php
 
-    class Painel {
+     class Painel {
 
         //Define se o usuário está logado ou não
         public static function logado(){
