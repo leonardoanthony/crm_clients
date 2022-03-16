@@ -28,9 +28,18 @@
 
                 if($sql->rowCount() == 1){
                     $info = $sql->fetch();
-                    echo 'logado: '.$info['nome_usuario'];
+                    $_SESSION['id'] = $info['id'];
+                    $_SESSION['nome'] = $info['nome_usuario'];
+                    $_SESSION['user'] = $info['login_usuario'];
+                    $_SESSION['pass'] = $info['senha_usuario'];
+                    $_SESSION['perfil'] = $info['perfil'];
+                    $_SESSION['nivel'] = $info['nivel_acesso'];
+                    $_SESSION['login'] = true;
+                    Painel::redirect(INCLUDE_PATH_PAINEL.'main');
+                    die();
+                    
                 }else{
-                    echo 'não encontrado';
+                    
                 }
             }
             ?>
