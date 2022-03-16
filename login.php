@@ -33,7 +33,6 @@
                     $_SESSION['user'] = $info['login_usuario'];
                     $_SESSION['pass'] = $info['senha_usuario'];
                     $_SESSION['perfil'] = $info['perfil'];
-                    $_SESSION['nivel'] = $info['nivel_acesso'];
                     $_SESSION['login'] = true;
                     Painel::redirect(INCLUDE_PATH);
                     die();
