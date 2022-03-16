@@ -17,8 +17,10 @@ if (isset($_GET['loggout'])) {
     <title>CRM Clients</title>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>css/style.css">
 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>git 
 
 </head>
 
@@ -46,9 +48,9 @@ if (isset($_GET['loggout'])) {
                             Relatórios
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Listar Usuários</a></li>
-                            <li><a class="dropdown-item" href="#">Listar Categorias</a></li>
-                            <li><a class="dropdown-item" href="#">Listar Clientes</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>listar-usuarios">Listar Usuários</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>listar-categorias">Listar Categorias</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>listar-clientes">Listar Clientes</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -77,8 +79,7 @@ if (isset($_GET['loggout'])) {
     </div>
 
     <script src="<?php echo INCLUDE_PATH; ?>js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
 </body>
 
 </html>
