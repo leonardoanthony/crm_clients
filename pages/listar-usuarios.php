@@ -1,6 +1,13 @@
 <?php
 
-    $usuarios = Usuario::listarUsuarios();
+$usuarios = Usuario::listarUsuarios();
+
+if (isset($_GET['excluir'])) {
+    $idExcluir = intval($_GET['excluir']);
+    Painel::delete('tb_admin.usuarios', $idExcluir);
+    Painel::redirect(INCLUDE_PATH . 'listar-usuarios');
+}
+
 
 ?>
 
@@ -17,18 +24,18 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($usuarios as $key => $usuario){ ?>
-                <tr>
-                    <th scope="row"><?php echo $usuario['nome_usuario']; ?></th>
-                    <td><?php echo $usuario['login_usuario']; ?></td>
-                    <td><?php echo Painel::$perfil[$usuario['perfil']]; ?></td>
-                    <td>
-                        <button class="btn btn-success"><i class="material-icons">mode_edit</i></button>
-                        <button class="btn btn-danger"><i class="material-icons">delete</i></button>
+                <?php foreach ($usuarios as $key => $usuario) { ?>
+                    <tr>
+                        <th scope="row"><?php echo $usuario['nome_usuario']; ?></th>
+                        <td><?php echo $usuario['login_usuario']; ?></td>
+                        <td><?php echo Painel::$perfil[$usuario['perfil']]; ?></td>
+                        <td>
+                            <a class="btn btn-success" href="<?php echo INCLUDE_PATH; ?>editar-usuario?id=<?php echo $usuario['id']; ?>"><i class="material-icons">mode_edit</i></a>
+                            <a actionBtn="delete" class="btn btn-danger" href="<?php echo INCLUDE_PATH; ?>listar-usuarios?excluir=<?php echo $usuario['id']; ?>"><i class="material-icons">delete</i></a>
                         </td>
-                </tr>
+                    </tr>
                 <?php } ?>
-                
+
             </tbody>
         </table>
     </div>
