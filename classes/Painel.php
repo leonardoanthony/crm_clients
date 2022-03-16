@@ -10,7 +10,13 @@
         // Encerra a sessão e redireciona para a pagina principal
         public static function loggout(){
             session_destroy();
-            header('Location: '.INCLUDE_PATH_PAINEL);
+            header('Location: '.INCLUDE_PATH);
+        }
+
+        public static function redirect($url){
+            echo '<script>location.href="'.$url.'"</script>';
+            die();
+
         }
     }
 
