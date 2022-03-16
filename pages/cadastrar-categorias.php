@@ -1,3 +1,9 @@
+<?php
+
+    if(Painel::permissaoPagina($_SESSION['perfil'])){
+
+?>
+
 <div class="container">
     <div class="box-init">
     <?php
@@ -24,3 +30,14 @@
         </form>
     </div>
 </div>
+
+<?php }else{ ?>
+
+    <div class="container">
+    <div class="box-init">
+        <?php Painel::alert('erro','Você não tem permissão de acesso a essa página'); ?>   
+    </div>
+</div>
+
+
+<?php } ?>
