@@ -1,9 +1,21 @@
 <div class="container">
     <div class="box-init">
+    <?php
+
+        if (@isset($_POST['acao'])){
+            $categoria = $_POST['categoria'];
+            
+            if(!$categoria){
+                Painel::alert('erro','Categoria não pode ser vazio');
+            }else{
+                Categoria::cadastrarCategoria($categoria);
+            }
+        }
+    ?>
         <h3>Cadastrar Categorias</h3>
         <form method="post">
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="categoria" name="categoria" placeholder="Categoria">
+                <input type="text" class="form-control" value="<?php echo @$_POST['categoria'];?>"  id="categoria" name="categoria" placeholder="Categoria">
                 <label for="categoria">Categoria</label>
             </div>
             <div class="submit-login">

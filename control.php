@@ -5,6 +5,7 @@ session_start();
 require_once('./classes/Painel.php');
 require_once('./classes/MySql.php');
 require_once('./classes/Usuario.php');
+require_once('./classes/Categoria.php');
 
 define('INCLUDE_PATH','http://localhost/crm_clients/'); 
 
