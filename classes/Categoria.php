@@ -11,6 +11,13 @@
             }
         }
 
+        public static function listarCategorias(){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_control.categorias`");
+            $sql->execute();
+            $categorias = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $categorias;
+        }
+
 
     }
 
