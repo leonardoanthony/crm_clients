@@ -18,6 +18,23 @@
             return $usuarios;
         }
 
+        public static function selecionarUsuario($id){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios` WHERE `id` = ?");
+            $sql->execute(array($id));
+            $usuario = $sql->fetch(PDO::FETCH_ASSOC);
+            return $usuario;
+        }
+
+
+        public static function atualizarUsuario($nome,$user,$password, $perfil, $id){
+            $sql = MySql::conectar()->prepare("UPDATE `tb_admin.usuarios` SET `nome_usuario` = ? , `login_usuario` = ? , `senha_usuario` = ?,  `perfil` = ? WHERE `id` = ?");
+            if($sql->execute(array($nome,$user,$password,$perfil,$id))){
+                Painel::alert('sucesso', 'Usuário atualizado com sucesso');
+            }else{
+                Painel::alert('erro', 'Erro ao atualizar usuário');
+            }
+        }
+
 
     }
 
