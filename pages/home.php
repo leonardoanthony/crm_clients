@@ -1,3 +1,16 @@
+
+<?php
+
+    $categorias = Categoria::listarCategorias();
+    $gratis = Cliente::listarClientesPorCategoria(1);
+    $normal = Cliente::listarClientesPorCategoria(2);
+    $premium = Cliente::listarClientesPorCategoria(3);
+
+
+    
+
+?>
+
 <div class="container">
 
     <div class="box-init">
@@ -11,13 +24,17 @@
     <script>
         const data = {
             labels: [
-                'Grátis',
-                'Normal',
-                'Premium'
+                <?php
+                    
+                    foreach($categorias as $categoria){
+                        echo "'".$categoria['nome_categoria']."',";
+                    }
+                    
+                ?>
             ],
             datasets: [{
                 label: 'My First Dataset',
-                data: [300, 50, 100],
+                data: [<?php echo count($gratis); ?>, <?php echo count($normal); ?>, <?php echo count($premium); ?>],
                 backgroundColor: [
                     'rgb(255, 99, 132)',
                     'rgb(54, 162, 235)',

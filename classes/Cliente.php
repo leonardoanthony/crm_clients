@@ -11,6 +11,13 @@
             }
         }
 
+        public static function listarClientesPorCategoria($categoria){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_control.clientes` WHERE `id_categoria` = ? ");
+            $sql->execute(array($categoria));
+            $clientes = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $clientes;
+        }
+
 
     }
 
