@@ -36,8 +36,8 @@ if (isset($_GET['loggout'])) {
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastrar-usuarios">Cadastrar Usuários</a></li>
-                            <li><a class="dropdown-item" href="#">Cadastrar Categorias</a></li>
-                            <li><a class="dropdown-item" href="#">Cadastrar Clientes</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastrar-categorias">Cadastrar Categorias</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastrar-clientes">Cadastrar Clientes</a></li>
                         </ul>
                     </li>
 

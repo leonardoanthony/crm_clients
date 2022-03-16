@@ -11,9 +11,9 @@
     <script>
         const data = {
             labels: [
-                'Red',
-                'Blue',
-                'Yellow'
+                'Grátis',
+                'Normal',
+                'Premium'
             ],
             datasets: [{
                 label: 'My First Dataset',
