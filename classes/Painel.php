@@ -3,8 +3,8 @@
      class Painel {
 
         public static $perfil = [
-            '0' => 'VISUALIZADOR',
-            '1' => 'OPERADOR'
+            '1' => 'VISUALIZADOR',
+            '2' => 'OPERADOR'
         ];
 
 
@@ -45,6 +45,11 @@
             }else if($type == 'erro'){
                 echo '<div class="alert erro">'.$mensagem.'</div>';
             }
+        }
+
+        public static function delete($tabela,$id){
+            $sql = MySql::conectar()->prepare("DELETE FROM `$tabela` WHERE id = $id");
+            $sql->execute();
         }
     }
 
