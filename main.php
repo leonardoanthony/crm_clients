@@ -16,6 +16,8 @@ if (isset($_GET['loggout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRM Clients</title>
     <link rel="stylesheet" href="<?php echo INCLUDE_PATH; ?>css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
 </head>
@@ -24,7 +26,7 @@ if (isset($_GET['loggout'])) {
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">CRMClients</a>
+            <a class="navbar-brand" href="<?php echo INCLUDE_PATH; ?>">CRMClients</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
 
@@ -33,7 +35,7 @@ if (isset($_GET['loggout'])) {
                             Cadastros
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Cadastrar Usuários</a></li>
+                            <li><a class="dropdown-item" href="<?php echo INCLUDE_PATH; ?>cadastrar-usuarios">Cadastrar Usuários</a></li>
                             <li><a class="dropdown-item" href="#">Cadastrar Categorias</a></li>
                             <li><a class="dropdown-item" href="#">Cadastrar Clientes</a></li>
                         </ul>
@@ -74,7 +76,9 @@ if (isset($_GET['loggout'])) {
 
     </div>
 
+    <script src="<?php echo INCLUDE_PATH; ?>js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
