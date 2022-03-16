@@ -11,6 +11,13 @@
             }
         }
 
+        public static function listarUsuarios(){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_admin.usuarios`");
+            $sql->execute();
+            $usuarios = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $usuarios;
+        }
+
 
     }
 
