@@ -35,7 +35,7 @@
                     $_SESSION['perfil'] = $info['perfil'];
                     $_SESSION['nivel'] = $info['nivel_acesso'];
                     $_SESSION['login'] = true;
-                    Painel::redirect(INCLUDE_PATH_PAINEL.'main');
+                    Painel::redirect(INCLUDE_PATH);
                     die();
                     
                 }else{
