@@ -32,7 +32,7 @@ if (isset($_GET['loggout'])) {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav">
 
-                    <li class="nav-item dropdown">
+                    <li class="nav-item dropdown" <?php Painel::permisssaoMenu($_SESSION['perfil']);?>>
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Cadastros
                         </a>
