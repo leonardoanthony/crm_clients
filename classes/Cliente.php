@@ -18,6 +18,13 @@
             return $clientes;
         }
 
+        public static function listarClientes(){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_control.clientes`");
+            $sql->execute();
+            $clientes = $sql->fetchAll(PDO::FETCH_ASSOC);
+            return $clientes;
+        }
+
 
     }
 

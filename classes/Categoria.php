@@ -2,6 +2,12 @@
 
     class Categoria {
 
+        public static $cores = [
+            '0' => 'table-danger',
+            '1' => 'table-primary',
+            '2' => 'table-warning',
+        ];
+
         public static function cadastrarCategoria($categoria){
             $sql = MySql::conectar()->prepare("INSERT INTO `tb_control.categorias` VALUES (null,?)");
             if($sql->execute(array($categoria))){
@@ -16,6 +22,10 @@
             $sql->execute();
             $categorias = $sql->fetchAll(PDO::FETCH_ASSOC);
             return $categorias;
+        }
+
+        public static function corCategoria($categoria){
+            return self::$cores[$categoria];
         }
 
 
