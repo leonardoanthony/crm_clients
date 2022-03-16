@@ -5,16 +5,13 @@
         if (@isset($_POST['acao'])){
             $nome = $_POST['nome'];
             $categoria = $_POST['categoria'];
-            $perfil = $_POST['perfil'];
             
             if(!$nome){
                 Painel::alert('erro','Nome não pode ser vazio');
             }else if(!$categoria){
                 Painel::alert('erro','Selecione uma opção de categoria válida');
-            }else if(!$perfil){
-                Painel::alert('erro','Selecione uma opção de perfil válida');
             }else{
-                Cliente::cadastrarCliente($nome, $categoria, $perfil);
+                Cliente::cadastrarCliente($nome, $categoria);
             }
         }
     ?>
@@ -37,14 +34,6 @@
                 <label for="categoria">Categoria</label>
             </div>
 
-            <div class="form-floating mb-3">
-                <select class="form-select" id="perfil" name="perfil" aria-label="Floating label select example">
-                    <option value="0" selected >Selecione</option>
-                    <option value="1">Visualizador</option>
-                    <option value="2">Operador</option>
-                </select>
-                <label for="perfil">Perfil</label>
-            </div>
             <div class="submit-login">
                 <input class="btn btn-success" type="submit" value="Cadastrar" name="acao">
             </div>
