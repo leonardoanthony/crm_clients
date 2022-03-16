@@ -28,6 +28,23 @@
             return self::$cores[$categoria];
         }
 
+        public static function selecionarCategoria($id){
+            $sql = MySql::conectar()->prepare("SELECT * FROM `tb_control.categorias` WHERE `id` = ?");
+            $sql->execute(array($id));
+            $categoria = $sql->fetch(PDO::FETCH_ASSOC);
+            return $categoria;
+        }
+
+
+        public static function atualizarCategoria($categoria, $id){
+            $sql = MySql::conectar()->prepare("UPDATE `tb_control.categorias` SET `nome_categoria` = ? WHERE `id` = ?");
+            if($sql->execute(array($categoria, $id))){
+                Painel::alert('sucesso', 'Categoria atualizada com sucesso');
+            }else{
+                Painel::alert('erro', 'Erro ao atualizar Categoria');
+            }
+        }
+
 
     }
 
