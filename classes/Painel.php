@@ -61,6 +61,8 @@
         public static function permissaoPagina($perfil){
             if($perfil == 1){
                 return false;
+            }else{
+                return true;
             }
         }
     }
